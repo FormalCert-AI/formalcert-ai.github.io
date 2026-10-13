@@ -12,4 +12,6 @@ The site uses static HTML, CSS, and JavaScript. GitHub Pages publishes the `main
 - `llm2cert/index.html`: paper, benchmark, results, and citation.
 - `assets/`: paper PDFs and the LLM2Cert framework figure. `barrier-like-reach-avoid.pdf` is the reach-avoid comparison paper on arXiv (2512.05348).
 
+The organization homepage and project page share the transparent FC logo in `assets/formalcert-ai-fc-icon.png`, used in their headers and browser icons. The logo keeps its transparent background so the site's warm paper color shows through. The same square asset can be used for the GitHub organization avatar.
+
 For a local preview, run `python3 -m http.server 8765` and open http://localhost:8765.
