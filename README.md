@@ -4,13 +4,20 @@ Organization homepage: https://formalcert-ai.github.io
 
 LLM2Cert project page: https://formalcert-ai.github.io/llm2cert/
 
+Runtime monitoring project page: https://formalcert-ai.github.io/runtime-barrier-monitor/
+
+Runtime monitoring paper repository (PDF only): https://github.com/FormalCert-AI/runtime-barrier-monitor
+
 Code and experiment records: https://github.com/FormalCert-AI/llm2cert
 
 The site uses static HTML, CSS, and JavaScript. GitHub Pages publishes the `main` branch from the repository root. No build step is required.
 
 - `index.html`: organization homepage, research projects, and publications.
 - `llm2cert/index.html`: paper, benchmark, results, and citation.
+- `runtime-barrier-monitor/index.html`: working paper, author, supervisor, and paper links. No code is included in this release.
 - `assets/`: paper PDFs and the LLM2Cert framework figure. `barrier-like-reach-avoid.pdf` is the reach-avoid comparison paper on arXiv (2512.05348).
+
+`assets/runtime-barrier-monitor.pdf` is an unchanged copy of the supplied 2026-10-19 manuscript. Keep it byte-identical to `runtime-barrier-monitor.pdf` in the paper repository when updating the public version.
 
 The organization homepage and project page share the transparent FC logo in `assets/formalcert-ai-fc-icon.png`, used in their headers and browser icons. The logo keeps its transparent background so the site's warm paper color shows through. The same square asset can be used for the GitHub organization avatar.
 
