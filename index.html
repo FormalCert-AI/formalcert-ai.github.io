@@ -6,18 +6,30 @@
   <meta name="description" content="FormalCert-AI: research on formal methods and intelligent systems, including verification, synthesis, and dynamical systems.">
   <title>FormalCert-AI</title>
   <link rel="icon" type="image/png" sizes="1254x1254" href="assets/formalcert-ai-fc-icon.png">
-  <link rel="stylesheet" href="styles.css?v=fc-20261020">
+  <link rel="stylesheet" href="styles.css?v=statistical-20261020">
 </head>
 <body>
   <header class="site-header">
     <a class="brand" href="./"><img class="brand-mark" src="assets/formalcert-ai-fc-icon.png" alt="" width="44" height="44"><span>FormalCert<span class="brand-ai">-AI</span></span></a>
-    <nav aria-label="Main navigation"><a href="#research">Research</a><a href="#publications">Publications</a><a href="runtime-barrier-monitor/">Runtime monitoring</a><a href="llm2cert/">LLM2Cert</a><a href="https://github.com/FormalCert-AI">GitHub ↗</a></nav>
+    <nav aria-label="Main navigation"><a href="#research">Research</a><a href="statistical-barrier-certification/">Statistical certification</a><a href="#publications">Publications</a><a href="https://github.com/FormalCert-AI">GitHub ↗</a></nav>
   </header>
   <main class="shell">
     <section class="home-hero" id="research">
       <p class="eyebrow">FORMALCERT-AI</p>
       <h1>Formal methods.<br><em>Intelligent systems.</em></h1>
-      <p class="lede">We work on formal methods and intelligent systems, including verification, synthesis, and the analysis of dynamical systems.</p>
+      <p class="lede">We study how learned systems can come with meaningful guarantees—from certificate synthesis and statistical certification to monitoring during deployment.</p>
+      <div class="research-spectrum" aria-label="Research directions"><a href="llm2cert/"><span>01 / SYNTHESIZE</span>Discover a certificate <b>↗</b></a><a href="statistical-barrier-certification/"><span>02 / CERTIFY</span>Quantify a region <b>↗</b></a><a href="runtime-barrier-monitor/"><span>03 / MONITOR</span>Audit during deployment <b>↗</b></a></div>
+    </section>
+    <section class="home-project statistical-project" aria-labelledby="statistical-project-title">
+      <div>
+        <p class="eyebrow">NEW PROJECT · 2026 · PREPRINT</p>
+        <h2 id="statistical-project-title"><a href="statistical-barrier-certification/">Statistical Barrier Certification</a></h2>
+        <p class="project-subtitle">Statistical Certification of Neural Barrier Functions for invariance and Reach-Avoidance in Learning-Enabled Systems</p>
+        <p class="project-authors">Zhipeng Cao, Nikolaus Vertovec, Luke Ong, Taoran Wu, Bai Xue</p>
+        <p>Joint policy–barrier learning followed by independent PAC certification. Explore how a certified region’s size relates to its multi-step guarantee.</p>
+        <div class="actions"><a class="button" href="statistical-barrier-certification/">Explore the project →</a><a class="text-link" href="assets/statistical-barrier-certification.pdf">Paper PDF ↗</a><a class="text-link" href="https://github.com/FormalCert-AI/statistical-barrier-certification">GitHub ↗</a></div>
+      </div>
+      <a class="statistical-thumbnail" href="statistical-barrier-certification/" aria-label="Explore the statistical certification project and interactive explainer"><img src="assets/statistical-barrier/overview.svg" alt="A schematic certified region and the learning-to-certification pipeline" width="600" height="490"></a>
     </section>
     <section class="home-project runtime-project" aria-labelledby="runtime-project-title">
       <div>
@@ -39,7 +51,7 @@
         <p class="author-note">* Equal contribution. † Equal advising.</p>
         <p>Lyapunov functions, barrier certificates, and feedback policies for stability, region of attraction, forward invariance, and safety.</p>
         <p>Includes DynaCertBench: 105 problems spanning literature-derived, extended, and newly constructed systems.</p>
-        <div class="actions"><a class="button" href="llm2cert/">Project page →</a><a class="text-link" href="assets/LLM2Cert.pdf">Paper ↗</a><a class="text-link" href="https://github.com/FormalCert-AI/llm2cert-artifact">Code and data ↗</a></div>
+        <div class="actions"><a class="button" href="llm2cert/">Project page →</a><a class="text-link" href="assets/LLM2Cert.pdf">Paper ↗</a><a class="text-link" href="https://github.com/FormalCert-AI/llm2cert">Code and data ↗</a></div>
       </div>
       <a href="llm2cert/" class="project-thumbnail"><img src="assets/framework.png" alt="Overview of LLM2Cert's certificate synthesis and SMT/Lean verification pipeline"></a>
     </section>
@@ -66,8 +78,8 @@
     </section>
     <section class="home-resources">
       <h2>Code and data</h2>
-      <p>The <a href="https://github.com/FormalCert-AI/llm2cert-artifact">LLM2Cert artifact</a> contains the implementation, benchmark, recorded model outputs, and experiment reproduction instructions.</p>
-      <p>Questions about the project can be raised in <a href="https://github.com/FormalCert-AI/llm2cert-artifact/issues">GitHub Issues</a>.</p>
+      <p>The <a href="https://github.com/FormalCert-AI/llm2cert">LLM2Cert repository</a> contains the implementation, benchmark, recorded model outputs, and experiment reproduction instructions.</p>
+      <p>The <a href="https://github.com/FormalCert-AI/statistical-barrier-certification">statistical certification project</a> currently hosts the manuscript, with implementation updates to follow.</p>
     </section>
   </main>
   <footer class="site-footer shell"><span>FormalCert-AI</span><a href="https://github.com/FormalCert-AI">GitHub ↗</a></footer>

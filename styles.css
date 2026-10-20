@@ -30,6 +30,16 @@ em { font-style: normal; color: var(--accent); }
 .project-subtitle { font-weight: 600; color: var(--ink) !important; }
 .project-thumbnail { display: block; background: white; padding: 10px; border: 1px solid var(--line); }
 .home-project + .home-project { border-top: 0; }
+.research-spectrum { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-top: 48px; }
+.research-spectrum a { position: relative; padding-top: 15px; border-top: 1px solid var(--line); font-size: 14px; text-decoration: none; }
+.research-spectrum span { display: block; margin-bottom: 8px; color: var(--muted); font-size: 9px; letter-spacing: .12em; }
+.research-spectrum b { float: right; color: #236552; font-weight: 400; }
+.statistical-project h2 { font-size: clamp(33px, 4vw, 47px); }
+.statistical-project .eyebrow { color: #236552; }
+.statistical-project .button { background: #236552; }
+.statistical-project .button:hover { background: var(--ink); }
+.statistical-thumbnail { display: block; }
+.statistical-thumbnail img { display: block; width: 100%; }
 .home-project .project-authors { font-size: 14px; margin: 20px 0 4px; color: var(--ink); }
 .runtime-project { grid-template-columns: 1.3fr .7fr; }
 .runtime-project h2 { font-size: clamp(32px, 4vw, 46px); }
@@ -118,6 +128,7 @@ pre { white-space: pre-wrap; overflow-wrap: anywhere; font-size: 12px; line-heig
   .citation-heading { align-items: flex-start; flex-direction: column; gap: 0; }
 }
 @media (max-width: 420px) {
+  .research-spectrum { grid-template-columns: 1fr; gap: 17px; margin-top: 30px; }
   .shell, .site-header { padding-left: 20px; padding-right: 20px; }
   .task-grid { grid-template-columns: 1fr; }
   th, td { padding: 10px 7px; }

@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Joint policy–barrier learning and independent statistical certification for multi-step invariance and reach-avoidance in black-box dynamical systems.">
+  <meta property="og:title" content="Statistical Barrier Certification · FormalCert-AI">
+  <meta property="og:description" content="Learn a controller. Certify a region. Explore PID-Barrier learning and set-level PAC guarantees.">
+  <meta property="og:url" content="https://formalcert-ai.github.io/statistical-barrier-certification/">
+  <meta property="og:image" content="https://formalcert-ai.github.io/assets/statistical-barrier/overview.svg">
+  <link rel="canonical" href="https://formalcert-ai.github.io/statistical-barrier-certification/">
+  <link rel="icon" href="../assets/formalcert-ai-fc-icon.png" type="image/png">
+  <link rel="stylesheet" href="../styles.css?v=statistical-20261020">
+  <link rel="stylesheet" href="project.css?v=20261020">
+  <title>Statistical Barrier Certification · FormalCert-AI</title>
+  <script src="project.js?v=20261020" defer></script>
+  <script src="../site.js" defer></script>
+</head>
+<body class="cert-page">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="../"><img class="brand-mark" src="../assets/formalcert-ai-fc-icon.png" alt="" width="44" height="44"><span>FormalCert<span class="brand-ai">-AI</span></span></a>
+    <nav aria-label="Project navigation"><a href="#method">Method</a><a href="#explore">Explore</a><a href="#results">Experiments</a><a href="#paper">Paper &amp; code</a><a href="../">All research ↗</a></nav>
+  </header>
+  <main id="main">
+    <section class="cert-hero shell">
+      <div class="cert-hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span> RESEARCH PROJECT · 2026</p>
+        <h1>Learn a controller.<br><em>Certify a region.</em></h1>
+        <p class="hero-explainer">What can finite data tell us about the safety of a learned controller? We combine neural barrier learning with independent statistical certification to quantify a region’s multi-step behavior.</p>
+        <div class="actions"><a class="button" href="../assets/statistical-barrier-certification.pdf">Read the paper <span aria-hidden="true">↗</span></a><a class="text-link" href="https://github.com/FormalCert-AI/statistical-barrier-certification">GitHub ↗</a></div>
+        <p class="release-status">Manuscript available <span>·</span> Implementation to follow</p>
+      </div>
+      <figure class="hero-illustration">
+        <img src="../assets/statistical-barrier/overview.svg" width="600" height="490" alt="Schematic of a learned controller and barrier, followed by independent data and a certified region with a set-level PAC bound.">
+        <figcaption>From learned behavior to a quantified operating region.</figcaption>
+      </figure>
+    </section>
+    <section class="paper-identity shell" aria-label="Paper details">
+      <p class="identity-label">THE PAPER</p>
+      <div><h2>Statistical Certification of Neural Barrier Functions for invariance and Reach-Avoidance in Learning-Enabled Systems</h2><p>Zhipeng Cao, Nikolaus Vertovec, Luke Ong, Taoran Wu, Bai Xue</p></div>
+      <a href="../assets/statistical-barrier-certification.pdf" class="identity-pdf" aria-label="Read the 26-page manuscript">PDF <span>26 pages ↗</span></a>
+    </section>
+    <section class="cert-method shell" id="method">
+      <div class="section-intro"><div><p class="eyebrow">THE IDEA</p><h2>Train jointly.<br>Certify independently.</h2></div><p>Learning produces a candidate. A separate certification stage quantifies what that candidate supports under fixed dynamics and a fixed controller.</p></div>
+      <ol class="method-flow">
+        <li><span class="step-number">01 / LEARN</span><h3>A policy and a barrier</h3><p>Jointly train a controller and neural barrier from rollouts. PID feedback uses barrier violations to adapt the learning objective.</p><div class="method-symbol"><span>π<sub>θ</sub></span><span class="symbol-link">↔</span><span>B<sub>φ</sub></span></div><span class="method-note">PID-Barrier + PPO</span></li>
+        <li><span class="step-number">02 / CERTIFY</span><h3>Freeze. Then collect new data.</h3><p>Keep the learned pair fixed. Use independent initial states and finite-horizon rollouts to solve a scalar scenario optimization problem.</p><div class="method-symbol"><span class="sample-dots" aria-hidden="true">···<br>···</span><span class="symbol-link">→</span><span>ξ*</span></div><span class="method-note">Independent i.i.d. certification data</span></li>
+        <li><span class="step-number">03 / QUANTIFY</span><h3>A family of certified regions</h3><p>Admissible barrier thresholds yield nested regions and associated PAC bounds. Reuse the certificate while the dynamics and controller remain unchanged.</p><div class="method-symbol"><span>S̃<sub>ζ</sub></span><span class="symbol-link">→</span><span>1 − α / μ</span></div><span class="method-note">Set-level, multi-step guarantees</span></li>
+      </ol>
+    </section>
+    <section class="explore-section" id="explore">
+      <div class="shell">
+        <div class="section-intro"><div><p class="eyebrow">INTERACTIVE EXPLAINER</p><h2>What does the<br>certificate say?</h2></div><p>The certified region has a size, and the certificate bounds the fraction of that region satisfying the specified finite-horizon property. Explore how those quantities relate.</p></div>
+        <div class="explorer">
+          <div class="phase-panel">
+            <div class="phase-header"><span>STATE SPACE</span><div class="task-toggle" role="group" aria-label="Certification task"><button type="button" data-task="invariance" aria-pressed="true">Invariance</button><button type="button" data-task="reach" aria-pressed="false">Reach-avoid</button></div></div>
+            <svg id="phase-plot" viewBox="0 0 560 410" role="img" aria-labelledby="phase-title phase-description">
+              <title id="phase-title">Illustrative multi-step invariant region</title>
+              <desc id="phase-description">A rectangular safe domain contains an elliptical certified region. Sliders adjust the illustrative region measure and violation tolerance. The curve illustrates the selected task.</desc>
+              <defs><pattern id="phase-grid" width="31" height="31" patternUnits="userSpaceOnUse"><path d="M31 0H0V31" fill="none" stroke="#dce3dc" stroke-width=".7"/></pattern><linearGradient id="region-fill" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#93cdbb" stop-opacity=".6"/><stop offset="1" stop-color="#d0eadd" stop-opacity=".15"/></linearGradient></defs>
+              <rect x="44" y="45" width="472" height="310" rx="3" fill="#f9fbf7" stroke="#bac7bd"/>
+              <rect x="44" y="45" width="472" height="310" fill="url(#phase-grid)"/>
+              <path d="M44 200H516M280 45V355" fill="none" stroke="#a8b7ac" stroke-width=".8"/>
+              <text x="60" y="72" class="plot-label">Safe domain S</text><text x="505" y="382" class="plot-label">x₁</text><text x="21" y="57" class="plot-label">x₂</text>
+              <ellipse id="certified-region" cx="280" cy="200" rx="188.3" ry="123.7" fill="url(#region-fill)" stroke="#236552" stroke-width="2"/>
+              <ellipse id="inner-contour" cx="280" cy="200" rx="113" ry="74.2" fill="none" stroke="#4d8975" stroke-width="1" stroke-dasharray="4 6" opacity=".45"/>
+              <g id="plot-samples" fill="#548b78" opacity=".55"></g>
+              <path id="example-trajectory" d="M120 200C120 105 380 85 380 205S208 300 244 210" fill="none" stroke="#c15b3e" stroke-width="2.5" stroke-linecap="round"/>
+              <circle id="trajectory-start" cx="120" cy="200" r="4" fill="#c15b3e"/>
+              <g id="target-marker" hidden><circle cx="280" cy="200" r="19" fill="#e8be63" fill-opacity=".3" stroke="#997020" stroke-dasharray="3 3"/><text x="303" y="205" class="plot-label">Target T</text></g>
+              <text x="60" y="337" class="region-label">Certified region S̃</text>
+            </svg>
+            <p id="task-description" class="task-description">Invariance: remain in the certified region over the next k<sub>max</sub> steps.</p>
+            <p class="schematic-note">Illustrative geometry and trajectories. Actual admissible regions are determined by the learned barrier and certified thresholds.</p>
+          </div>
+          <div class="guarantee-panel">
+            <p class="eyebrow">EXPLORE THE SET-LEVEL BOUND</p>
+            <div class="slider-label"><label for="region-size">Region measure <span>μ<sub>S</sub>(S̃)</span></label><output id="region-value" for="region-size">50%</output></div>
+            <input id="region-size" type="range" min="12" max="75" value="50" step="1">
+            <div class="slider-label"><label for="violation-tolerance">Violation tolerance <span>α</span></label><output id="alpha-value" for="violation-tolerance">5.0%</output></div>
+            <input id="violation-tolerance" type="range" min="1" max="15" value="5" step="0.5">
+            <div class="bound-readout" aria-live="polite"><span>Fraction satisfying the multi-step property</span><strong id="bound-value">≥ 90.0%</strong><div class="bound-track"><span id="bound-fill" style="width:90%"></span></div><p id="bound-formula">1 − α / μ<sub>S</sub>(S̃) = 1 − 0.05 / 0.50</p></div>
+            <div class="bound-details"><div><span>Confidence over certification data</span><strong>95% <small>(β = 0.05)</small></strong></div><div><span>Sufficient sample size</span><strong id="sample-budget">N ≥ 160</strong></div></div>
+            <p class="bound-footnote">N ≥ ⌈(2/α)(ln(1/β) + 1)⌉ for the scalar scenario problem. This guarantee quantifies a fraction of the certified set under the reference measure; it does not identify which individual states satisfy the property.</p>
+            <noscript><p>Enable JavaScript to explore different parameters. The default illustration shows a 90% set-level lower bound at 95% confidence.</p></noscript>
+          </div>
+        </div>
+        <div class="guarantee-context"><span>READING THE GUARANTEE</span><p>Confidence concerns the randomly sampled certification dataset. Region measure concerns initial states under a fixed reference measure. The property is evaluated over a finite horizon, with safety required before target arrival in reach-avoidance.</p></div>
+      </div>
+    </section>
+    <section class="cert-results shell" id="results">
+      <div class="section-intro"><div><p class="eyebrow">EXPERIMENTS</p><h2>Learning behavior.<br>Certification evidence.</h2></div><p>The paper evaluates an inverted pendulum, a Van der Pol oscillator, and a 10-dimensional Hopfield system, with invariance and reach-avoid tasks across five training seeds.</p></div>
+      <div class="evidence-tabs" role="tablist" aria-label="Paper figures"><button id="tab-training" type="button" role="tab" aria-selected="true" aria-controls="figure-training" data-panel="figure-training">01 / Learning</button><button id="tab-regions" type="button" role="tab" aria-selected="false" aria-controls="figure-regions" data-panel="figure-regions" tabindex="-1">02 / Certified regions</button><button id="tab-samples" type="button" role="tab" aria-selected="false" aria-controls="figure-samples" data-panel="figure-samples" tabindex="-1">03 / Sample efficiency</button></div>
+      <figure id="figure-training" class="evidence-figure" role="tabpanel" aria-labelledby="tab-training"><img src="../assets/statistical-barrier/training.png" alt="Paper Figure 1: return and episode safety-cost learning curves on three invariance benchmarks, comparing PID-Barrier with five baseline methods." loading="lazy" width="2100" height="1000"><figcaption><strong>Learning the candidate.</strong> Return and episode cost in the invariance tasks. Lines show means; shaded areas show 95% confidence intervals across five runs. Empirical learning curves describe the evaluated runs. <span>Manuscript · Figure 1</span></figcaption></figure>
+      <figure id="figure-regions" class="evidence-figure" role="tabpanel" aria-labelledby="tab-regions" hidden><img src="../assets/statistical-barrier/regions.png" alt="Paper Figure 2: estimated invariant regions at different certification thresholds for the pendulum, Van der Pol and Hopfield benchmarks." loading="lazy"><figcaption><strong>Choosing a region after training.</strong> Admissible thresholds produce different certified regions from the same frozen policy–barrier pair. The Hopfield plot is a two-dimensional visualization of the 10-dimensional benchmark. <span>Manuscript · Figure 2</span></figcaption></figure>
+      <figure id="figure-samples" class="evidence-figure" role="tabpanel" aria-labelledby="tab-samples" hidden><img src="../assets/statistical-barrier/sample-efficiency.png" alt="Paper Figure 3: certification probability lower bounds versus sample size, comparing scenario optimization with the paper's Hoeffding-based Monte Carlo certificate." loading="lazy"><figcaption><strong>Using certification data efficiently.</strong> Scenario optimization is compared with the paper’s Hoeffding-based Monte Carlo certificate on the invariance tasks. This comparison is specific to that certification construction. <span>Manuscript · Figure 3</span></figcaption></figure>
+      <div class="certificate-evidence"><div><p class="eyebrow">SELECTED PID-BARRIER RESULTS</p><h3>The region and the bound belong together.</h3><p>Reported results vary by task and system. In particular, the Hopfield invariance task yields a smaller region and a lower bound than its reach-avoid task.</p></div><div class="table-wrap"><table><caption>Manuscript Tables 1, 4 and 5 · PID-Barrier row</caption><thead><tr><th scope="col">System / task</th><th scope="col">Valid seeds</th><th scope="col">Region μ</th><th scope="col">PAC bound</th></tr></thead><tbody><tr><th scope="row">Pendulum · invariant</th><td>5/5</td><td>0.461</td><td>0.965</td></tr><tr><th scope="row">Pendulum · reach-avoid</th><td>5/5</td><td>0.405</td><td>0.961</td></tr><tr><th scope="row">Van der Pol · invariant</th><td>5/5</td><td>0.624</td><td>0.974</td></tr><tr><th scope="row">Van der Pol · reach-avoid</th><td>5/5</td><td>0.586</td><td>0.973</td></tr><tr><th scope="row">Hopfield · invariant</th><td>2/5</td><td>0.031</td><td>0.483</td></tr><tr><th scope="row">Hopfield · reach-avoid</th><td>5/5</td><td>1.000</td><td>0.984</td></tr></tbody></table><p class="table-note">“Valid” follows the paper: seeds with PAC certificates for invariance; positive estimated set measure for reach-avoidance. Region measure is estimated; the reported bound uses 1 − α/μ. See the manuscript for the evaluation protocol and aggregation.</p></div></div>
+    </section>
+    <section class="cert-paper-section" id="paper"><div class="shell paper-and-code"><div><p class="eyebrow">PAPER &amp; PROJECT</p><h2>Read the details.<br>Follow the implementation.</h2><p>The repository currently contains the manuscript. Implementation code and reproduction instructions will be added in subsequent updates.</p><div class="actions"><a class="button" href="../assets/statistical-barrier-certification.pdf">Paper PDF ↗</a><a class="text-link" href="https://github.com/FormalCert-AI/statistical-barrier-certification">Project repository ↗</a></div><p class="version-note">Manuscript version · October 20, 2026</p></div><div class="citation-panel"><div class="citation-heading"><h3>Citation</h3><button type="button" data-copy="citation">Copy BibTeX</button></div><pre id="citation">@unpublished{cao2026statistical,
+  title = {Statistical Certification of Neural Barrier
+    Functions for invariance and Reach-Avoidance
+    in Learning-Enabled Systems},
+  author = {Cao, Zhipeng and Vertovec, Nikolaus
+    and Ong, Luke and Wu, Taoran and Xue, Bai},
+  year = {2026},
+  note = {Preprint},
+  url = {https://formalcert-ai.github.io/statistical-barrier-certification/}
+}</pre></div></div></section>
+  </main>
+  <footer class="site-footer shell"><a href="../">FormalCert-AI</a><span>Learning-enabled systems · Formal guarantees</span><a href="https://github.com/FormalCert-AI/statistical-barrier-certification">GitHub ↗</a></footer>
+</body>
+</html>

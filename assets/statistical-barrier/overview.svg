@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="490" viewBox="0 0 600 490" fill="none">
+  <title>Learn a controller. Certify a region.</title>
+  <desc>Illustrative state space and a three-step path from joint policy-barrier learning to independent certification and a set-level bound.</desc>
+  <defs><pattern id="grid" width="32" height="32" patternUnits="userSpaceOnUse"><path d="M32 0H0V32" stroke="#d6dfd5" stroke-width=".7"/></pattern><linearGradient id="wash" x1="140" y1="100" x2="440" y2="350" gradientUnits="userSpaceOnUse"><stop stop-color="#e3eadf"/><stop offset="1" stop-color="#b5d4c0"/></linearGradient></defs>
+  <rect x="18" y="18" width="564" height="446" rx="10" fill="#edf1e8" stroke="#d2dccf"/>
+  <text x="46" y="53" fill="#68796a" font-family="Arial,sans-serif" font-size="10" letter-spacing="2">A REGION, WITH A QUANTIFIED GUARANTEE</text>
+  <rect x="63" y="80" width="474" height="277" rx="2" fill="#f8faf5" stroke="#c2cfc0"/>
+  <rect x="63" y="80" width="474" height="277" fill="url(#grid)"/>
+  <path d="M63 219H537M300 80V357" stroke="#c2cfc0"/>
+  <ellipse cx="300" cy="218" rx="173" ry="111" transform="rotate(-13 300 218)" fill="url(#wash)" stroke="#286553" stroke-width="1.8"/>
+  <ellipse cx="300" cy="218" rx="119" ry="76" transform="rotate(-13 300 218)" stroke="#548770" stroke-dasharray="4 6" opacity=".6"/>
+  <ellipse cx="300" cy="218" rx="70" ry="44" transform="rotate(-13 300 218)" stroke="#548770" stroke-dasharray="4 6" opacity=".4"/>
+  <path d="M164 242C158 170 326 115 402 185C477 257 308 314 252 254C210 210 314 170 341 212C361 247 298 261 285 231" stroke="#bd573d" stroke-width="2.8" stroke-linecap="round"/>
+  <circle cx="164" cy="242" r="5" fill="#bd573d"/>
+  <circle cx="285" cy="231" r="4" fill="#bd573d"/>
+  <text x="82" y="104" fill="#68796a" font-family="Arial,sans-serif" font-size="11">Safe domain S</text>
+  <path d="M406 291H459" stroke="#286553"/>
+  <text x="407" y="311" fill="#286553" font-family="Arial,sans-serif" font-size="12">Certified region S̃</text>
+  <text x="82" y="338" fill="#798574" font-family="Arial,sans-serif" font-size="9">SCHEMATIC STATE SPACE</text>
+  <g font-family="Arial,sans-serif"><rect x="47" y="383" width="145" height="49" rx="4" fill="#fff" stroke="#ccd8c9"/><text x="61" y="402" fill="#286553" font-size="9" letter-spacing="1">01 / JOINT LEARNING</text><text x="61" y="420" fill="#243b2d" font-size="11">Policy + neural barrier</text><path d="M198 408H212M207 403L212 408L207 413" stroke="#8eaa91"/><rect x="219" y="383" width="145" height="49" rx="4" fill="#fff" stroke="#ccd8c9"/><text x="233" y="402" fill="#286553" font-size="9" letter-spacing="1">02 / INDEPENDENT DATA</text><text x="233" y="420" fill="#243b2d" font-size="11">Freeze and certify</text><path d="M370 408H384M379 403L384 408L379 413" stroke="#8eaa91"/><rect x="391" y="383" width="160" height="49" rx="4" fill="#286553"/><text x="405" y="402" fill="#c8e1cc" font-size="9" letter-spacing="1">03 / SET-LEVEL BOUND</text><text x="405" y="420" fill="#fff" font-size="13">1 − α / μ(S̃)</text></g>
+</svg>
