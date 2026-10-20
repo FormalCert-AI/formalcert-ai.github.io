@@ -10,7 +10,7 @@ Statistical certification project page: https://formalcert-ai.github.io/statisti
 
 Statistical certification paper repository: https://github.com/FormalCert-AI/statistical-barrier-certification
 
-Runtime monitoring paper repository (PDF only): https://github.com/FormalCert-AI/runtime-barrier-monitor
+Runtime monitoring paper and code repository: https://github.com/FormalCert-AI/runtime-barrier-monitor
 
 Code and experiment records: https://github.com/FormalCert-AI/llm2cert
 
@@ -18,11 +18,11 @@ The site uses static HTML, CSS, and JavaScript. GitHub Pages publishes the `main
 
 - `index.html`: organization homepage, research projects, and publications.
 - `llm2cert/index.html`: paper, benchmark, results, and citation.
-- `runtime-barrier-monitor/index.html`: working paper, author, supervisor, and paper links. No code is included in this release.
+- `runtime-barrier-monitor/index.html`: working paper, authors, overview, and links to the paper and released experiment code.
 - `statistical-barrier-certification/`: manuscript overview, interactive set-level PAC explainer, original experimental figures, selected results, and citation. Its `project.js` is presentation code for the website, not the research implementation.
 - `assets/`: paper PDFs and the LLM2Cert framework figure. `barrier-like-reach-avoid.pdf` is the reach-avoid comparison paper on arXiv (2512.05348).
 
-`assets/runtime-barrier-monitor.pdf` is an unchanged copy of the supplied 2026-10-19 manuscript. Keep it byte-identical to `runtime-barrier-monitor.pdf` in the paper repository when updating the public version.
+`assets/runtime-barrier-monitor.pdf` is an unchanged copy of the supplied 2026-10-20 preprint (17 pages). Keep it byte-identical to `runtime-barrier-monitor.pdf` in the paper repository when updating the public version.
 
 The homepage uses `assets/runtime-barrier-monitor-framework.png`, rendered from the manuscript's `figure/framework_new.pdf`, as the runtime project thumbnail. Its full landscape composition is retained. Project cards and the research-direction links are ordered Runtime Barrier Monitoring, LLM2Cert, then Statistical Barrier Certification.
 
