@@ -24,6 +24,8 @@ The site uses static HTML, CSS, and JavaScript. GitHub Pages publishes the `main
 
 `assets/runtime-barrier-monitor.pdf` is an unchanged copy of the supplied 2026-10-19 manuscript. Keep it byte-identical to `runtime-barrier-monitor.pdf` in the paper repository when updating the public version.
 
+The homepage uses `assets/runtime-barrier-monitor-framework.png`, rendered from the manuscript's `figure/framework_new.pdf`, as the runtime project thumbnail. Its full landscape composition is retained. Project cards and the research-direction links are ordered Runtime Barrier Monitoring, LLM2Cert, then Statistical Barrier Certification.
+
 `assets/statistical-barrier-certification.pdf` is the 26-page preprint prepared on 2026-10-20. It must remain byte-identical to `paper/statistical-barrier-certification.pdf` in the project repository. Figures in `assets/statistical-barrier/` are unchanged copies of manuscript Figures 1–3; `overview.svg` is a separately labeled explanatory schematic.
 
 When updating the statistical certification paper, replace both PDF copies together. Update the manuscript date, selected table values, and corresponding figures when the paper changes. The interactive explainer uses an illustrative region under a uniform reference measure and the scalar scenario sample bound; its controls are not numerical simulation or certification of a new system.
