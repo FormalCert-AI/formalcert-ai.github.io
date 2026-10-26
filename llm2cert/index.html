@@ -24,7 +24,7 @@
       <p class="paper-title">LLM Synthesis of Certificates<br>with SMT/Lean Verification</p>
       <p class="authors">Zhipeng Cao*, Peiyang Song*, Nikolaus Vertovec, Weiru Cui, Zhihao Yang,<br>Mingkang Liu, Luxia Lin, Bai Xue†, Alessandro Abate†</p>
       <p class="author-note">* Equal contribution. † Equal advising.</p>
-      <div class="actions"><a class="button" href="../assets/LLM2Cert.pdf">Paper PDF ↗</a><a class="text-link" href="https://github.com/FormalCert-AI/llm2cert-artifact">Code and data ↗</a><a class="text-link" href="https://github.com/FormalCert-AI/llm2cert-artifact/tree/main/results">Recorded runs ↗</a></div>
+      <div class="actions"><a class="button" href="../assets/LLM2Cert.pdf">Paper PDF ↗</a><a class="text-link" href="https://github.com/FormalCert-AI/llm2cert">Code and data ↗</a><a class="text-link" href="https://github.com/FormalCert-AI/llm2cert/tree/main/results">Recorded runs ↗</a></div>
       <p class="lede paper-summary">Language models propose Lyapunov functions, barrier certificates, and feedback policies. SMT solvers and Lean check the exact proof obligations.</p>
     </section>
     <section class="stats-strip shell" aria-label="Headline results">
@@ -58,22 +58,22 @@
         <article><h3>Forward invariance</h3><p>Do trajectories remain inside the set?</p><strong>13 problems</strong></article>
         <article><h3>Safety</h3><p>Do trajectories avoid unsafe states?</p><strong>54 problems</strong></article>
       </div>
-      <a class="text-link" href="https://github.com/FormalCert-AI/llm2cert-artifact/tree/main/data">Browse benchmark inputs and sources ↗</a>
+      <a class="text-link" href="https://github.com/FormalCert-AI/llm2cert/tree/main/data">Browse benchmark inputs and sources ↗</a>
     </section>
     <section class="section results-section" id="results">
       <div class="shell">
         <p class="eyebrow">RESULTS</p>
         <h2>Main experiment and research questions</h2>
         <article class="result-block">
-          <div><span class="result-label">MAIN</span><h3>End-to-end synthesis and verification</h3><p>The full framework verifies 81/105 systems. On the 51 systems supported by the external baselines, Full verifies 40; the baseline union verifies 19 natively and 11 under Strict accounting.</p><a class="text-link" href="https://github.com/FormalCert-AI/llm2cert-artifact/tree/main/results/main">Main runs and model outputs ↗</a></div>
+          <div><span class="result-label">MAIN</span><h3>End-to-end synthesis and verification</h3><p>The full framework verifies 81/105 systems. On the 51 systems supported by the external baselines, Full verifies 40; the baseline union verifies 19 natively and 11 under Strict accounting.</p><a class="text-link" href="https://github.com/FormalCert-AI/llm2cert/tree/main/results/main">Main runs and model outputs ↗</a></div>
           <div class="table-wrap"><table><caption>End-to-end coverage</caption><thead><tr><th scope="col">Configuration</th><th scope="col">Verified systems</th></tr></thead><tbody><tr><th scope="row">One-shot proposal</th><td>63/105</td></tr><tr><th scope="row">SMT-only</th><td>57/105</td></tr><tr><th scope="row">Lean-only</th><td>60/105</td></tr><tr class="highlight"><th scope="row">Full</th><td>81/105</td></tr></tbody></table><p class="table-note">The one-shot reference is reconstructed from successful Full traces that required no feedback.</p></div>
         </article>
         <article class="result-block">
-          <div><span class="result-label">RQ1 / RQ2</span><h3>Backend coverage and routing cost</h3><p>Comparisons use the same 81 frozen certificates and 296 active obligations. Full discharges 253 obligations through SMT and 43 through Lean.</p><div class="inline-links"><a class="text-link" href="https://github.com/FormalCert-AI/llm2cert-artifact/tree/main/results/rq1">RQ1: SMT and Lean ↗</a><a class="text-link" href="https://github.com/FormalCert-AI/llm2cert-artifact/tree/main/results/rq2">RQ2: routing and cost ↗</a></div></div>
+          <div><span class="result-label">RQ1 / RQ2</span><h3>Backend coverage and routing cost</h3><p>Comparisons use the same 81 frozen certificates and 296 active obligations. Full discharges 253 obligations through SMT and 43 through Lean.</p><div class="inline-links"><a class="text-link" href="https://github.com/FormalCert-AI/llm2cert/tree/main/results/rq1">RQ1: SMT and Lean ↗</a><a class="text-link" href="https://github.com/FormalCert-AI/llm2cert/tree/main/results/rq2">RQ2: routing and cost ↗</a></div></div>
           <div class="table-wrap"><table><caption>Frozen-certificate verification</caption><thead><tr><th scope="col">Strategy</th><th scope="col">Verified</th><th scope="col">Mean time (s)</th></tr></thead><tbody><tr><th scope="row">All-SMT</th><td>59/81</td><td>3.68</td></tr><tr><th scope="row">All-Lean</th><td>64/81</td><td>579.17</td></tr><tr class="highlight"><th scope="row">Routed (Full)</th><td>81/81</td><td>119.31</td></tr><tr><th scope="row">SMT-first + Lean</th><td>80/81</td><td>94.28</td></tr></tbody></table><p class="table-note">Time averages use verified certificates. Full is observed; SMT-first + Lean composes saved SMT and independent Lean records.</p></div>
         </article>
         <article class="result-block">
-          <div><span class="result-label">RQ3</span><h3>Compiler-guided proof repair</h3><p>Three feedback strategies start from the same 26 failed first attempts from 19 systems. Structured Repair repairs 21 obligations and has the lowest mean timeout-charged repair time.</p><a class="text-link" href="https://github.com/FormalCert-AI/llm2cert-artifact/tree/main/results/rq3">Repair trajectories and compiler logs ↗</a></div>
+          <div><span class="result-label">RQ3</span><h3>Compiler-guided proof repair</h3><p>Three feedback strategies start from the same 26 failed first attempts from 19 systems. Structured Repair repairs 21 obligations and has the lowest mean timeout-charged repair time.</p><a class="text-link" href="https://github.com/FormalCert-AI/llm2cert/tree/main/results/rq3">Repair trajectories and compiler logs ↗</a></div>
           <div class="table-wrap"><table><caption>Frozen proof repair</caption><thead><tr><th scope="col">Feedback</th><th scope="col">Repaired</th><th scope="col">Mean time (s)</th></tr></thead><tbody><tr><th scope="row">Generic Retry</th><td>1/26</td><td>873.66</td></tr><tr><th scope="row">Raw Diagnostics</th><td>17/26</td><td>491.02</td></tr><tr class="highlight"><th scope="row">Structured Repair</th><td>21/26</td><td>407.42</td></tr></tbody></table><p class="table-note">Unrepaired obligations are charged the full 900-second budget.</p></div>
         </article>
       </div>
@@ -90,9 +90,9 @@
       primaryClass={eess.SY},
       url={https://arxiv.org/abs/2610.30524}, 
 }</pre>
-      <p>For setup and new experiments, see the <a href="https://github.com/FormalCert-AI/llm2cert-artifact/blob/main/docs/RUNNING.md">running guide</a>. For questions, use <a href="https://github.com/FormalCert-AI/llm2cert-artifact/issues">GitHub Issues</a>.</p>
+      <p>For setup and new experiments, see the <a href="https://github.com/FormalCert-AI/llm2cert/blob/main/docs/RUNNING.md">running guide</a>. For questions, use <a href="https://github.com/FormalCert-AI/llm2cert/issues">GitHub Issues</a>.</p>
     </section>
   </main>
-  <footer class="site-footer shell"><a href="../">FormalCert-AI</a><a href="https://github.com/FormalCert-AI/llm2cert-artifact">Code and data ↗</a></footer>
+  <footer class="site-footer shell"><a href="../">FormalCert-AI</a><a href="https://github.com/FormalCert-AI/llm2cert">Code and data ↗</a></footer>
 </body>
 </html>
